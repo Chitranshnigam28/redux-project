@@ -14,7 +14,7 @@ const SearchBar = () => {
     }
   return (
     <div>
-        <form className='flex px-10 pb-8 gap-2 bg-gray-900' action="" onSubmit={submitHandler}>
+        <form className='flex px-10 pb-8 gap-2 bg-(--c2)' action="" onSubmit={submitHandler}>
             <input className='border-2 outline-none px-2 py-4 rounded w-full' type="text" placeholder='Search anything...' value={text} onChange={(e)=>{setText(e.target.value)}} required/>
             <button className='cursor-pointer active:scale-95 border-2 outline-none px-4 py-4 rounded'>Search</button>
         </form>

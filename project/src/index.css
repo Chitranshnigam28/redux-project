@@ -3,3 +3,10 @@
 #bottom{
     background: linear-gradient(transparent,black);
 }
+
+:root{
+    --c1:#041a33;
+    --c2:#06203d;
+    --c3:#1D546C;
+    --c4:#F4F4F4;
+}
