@@ -1,7 +1,7 @@
 import React from 'react'
 import CollectionCard from '../components/CollectionCard'
 import { useDispatch, useSelector } from 'react-redux'
-import { clearCollection } from '../redux/features/collectionSlice'
+import { clearCollection,emptyToast } from '../redux/features/collectionSlice'
 
 
 const CollectionPage = () => {
@@ -10,6 +10,7 @@ const CollectionPage = () => {
   const dispatch=useDispatch();
   const clearAll=()=>{
     dispatch(clearCollection())
+    dispatch(emptyToast())
   }
 
   return (

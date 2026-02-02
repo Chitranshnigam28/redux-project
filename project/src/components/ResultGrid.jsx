@@ -47,7 +47,7 @@ const ResultGrid = () => {
                     }));
                     // console.log('Videos'+JSON.stringify(data,0,2));
                 }else if(activeTab=='gif'){
-                   console.log('activeTab==gif->'+activeTab)
+                //    console.log('activeTab==gif->'+activeTab)
                     const res=await getGif(query);
                     // console.log(res.data);
                      data=res.data.data.map((elem)=>({

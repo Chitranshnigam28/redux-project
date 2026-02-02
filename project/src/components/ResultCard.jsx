@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Bookmark } from 'lucide-react';
 import { useDispatch,useSelector } from 'react-redux';
-import { addCollection, checkCollectionItem } from '../redux/features/collectionSlice';
+import { addCollection, addToast, removeToast } from '../redux/features/collectionSlice';
 const ResultCard = ({item}) => {
     
     const saved=useSelector(state=>state.collection.items.some(e=>e.id===item.id));
@@ -12,8 +12,10 @@ const ResultCard = ({item}) => {
       
       if(!saved){
         dispatch(addCollection(item));
+        dispatch(addToast())
       }else{
         dispatch(removeCollection(item));
+        dispatch(removeToast())
       }
       // setSaved(!exists);
     }

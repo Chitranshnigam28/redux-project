@@ -1,17 +1,18 @@
 import React, { useState } from 'react'
 import { Bookmark } from 'lucide-react';
 import { useDispatch,useSelector } from 'react-redux';
-import { removeCollection } from '../redux/features/collectionSlice';
+import { removeCollection,removeToast } from '../redux/features/collectionSlice';
 
 
 const CollectionCard = ({item}) => {
     const saved=useSelector(state=>state.collection.items.some(e=>e.id===item.id));
     const dispatch=useDispatch()
 
-    const removeFromCollection=(item)=>{
+    const removeFromCollection=(e)=>{
       e.preventDefault();     
        e.stopPropagation();
         dispatch(removeCollection(item.id))
+        dispatch(removeToast())
     }
     return (
     <div className='bg-white w-[23vw] h-80 relative text-black'>
@@ -25,7 +26,7 @@ const CollectionCard = ({item}) => {
       </div>
      
       <Bookmark className='absolute top-2 right-2 z-999 text-3xl text-blue-600 cursor-pointer transition active:scale-200' onClick={(e)=>{
-          removeFromCollection(item)
+          removeFromCollection(e)
       }}
         fill={saved?'#2563EB':''}/>
     </div>
