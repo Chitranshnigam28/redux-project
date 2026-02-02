@@ -49,7 +49,7 @@ const ResultGrid = () => {
                 }else if(activeTab=='gif'){
                    console.log('activeTab==gif->'+activeTab)
                     const res=await getGif(query);
-                    console.log(res.data);
+                    // console.log(res.data);
                      data=res.data.data.map((elem)=>({
                         id:elem.id,
                         type:elem.type,
@@ -62,7 +62,7 @@ const ResultGrid = () => {
                     //console.log(data);
                 }
                 
-                console.log(data);
+                // console.log(data);
                 dispatch(setResults(data))
             }
         catch(error) {
